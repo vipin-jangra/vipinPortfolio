@@ -15,6 +15,7 @@ const projects = [
     description:
       "Encrobytes delivers scalable B2B SaaS platforms and custom digital solutions to automate business operations, enhance performance, and drive digital transformation.",
     image: encrobytes,
+    Url: "https://encrobytes.com/",
     features: [
       "Cloud-based SaaS development",
       "Custom enterprise automation",
@@ -36,6 +37,7 @@ const projects = [
     description:
       "Depoter offers tech-enabled fulfillment services with API integration, same-day delivery, and scalable inventory management for online brands and D2C platforms.",
     image: depoter,
+    Url: "https://depoter.com/",
     features: [
       "API-driven order fulfillment",
       "Dark store network",
@@ -57,6 +59,7 @@ const projects = [
     description:
       "ResultBull is an AI-powered performance marketing platform that unifies multi-channel campaign management, predictive analytics, and real-time optimization to drive conversions.",
     image: resultbullImage, // assign your local or imported image
+    Url: "https://resultbull.ai/",
     features: [
       "Multi-channel campaign automation",
       "Predictive analytics",
@@ -208,7 +211,7 @@ export default function Projects() {
               <div className="flex flex-col sm:flex-row sm:gap-4 gap-3 pt-4">
                 {/* Live Demo Button */}
                 <a
-                  href="#"
+                  href={project.Url}
                   className="
                     group relative
                     px-5 sm:px-6 py-3
@@ -219,6 +222,8 @@ export default function Projects() {
                     hover:scale-105 active:scale-95
                     w-full sm:w-auto
                   "
+                  target="_blank"
+                  rel="noreferrer noopener"
                   style={{
                     background: "linear-gradient(135deg,var(--a1),var(--a2))",
                   }}
@@ -232,17 +237,19 @@ export default function Projects() {
 
                 {/* GitHub Button */}
                 <a
-                  href="#"
+                  href={import.meta.env.VITE_GITHUB}
                   className="
-      px-5 sm:px-6 py-3
-      flex items-center justify-center gap-2
-      rounded-full border border-white/10 text-white
-      bg-white/5
-      text-sm sm:text-base
-      transition-transform duration-300 ease-out
-      hover:scale-105 active:scale-95
-      w-full sm:w-auto
-    "
+                        px-5 sm:px-6 py-3
+                        flex items-center justify-center gap-2
+                        rounded-full border border-white/10 text-white
+                        bg-white/5
+                        text-sm sm:text-base
+                        transition-transform duration-300 ease-out
+                        hover:scale-105 active:scale-95
+                        w-full sm:w-auto
+                      "
+                  target="_blank"
+                  rel="noreferrer noopener"
                 >
                   <FaGithub size={18} /> GitHub
                 </a>
