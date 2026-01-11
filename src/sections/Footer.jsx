@@ -1,27 +1,9 @@
 //eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { socials } from "../components/Constants";
 
 export default function Footer() {
-  const socialLinks = [
-    {
-      name: "Github",
-      href: "https://github.com/vipin-2003",
-      icon: FaGithub,
-    },
-    {
-      name: "Linkedin",
-      href: "https://www.linkedin.com/in/vipin-2003/",
-      icon: FaLinkedin,
-    },
-
-    {
-      name: "Gmail",
-      href: "mailto:vipin2003@gmail.com",
-      icon: FaEnvelope,
-    },
-  ];
-
   const letterVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: (i) => ({
@@ -66,8 +48,6 @@ export default function Footer() {
       id="footer"
       className="relative w-full min-h-[60vh] bg-[#0a0a0a] py-20 px-4 flex items-center justify-center overflow-hidden"
     >
-      
-
       <div className="relative z-10 flex flex-col items-center justify-center">
         {/* Name */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
@@ -115,7 +95,7 @@ export default function Footer() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {socialLinks.map((social, index) => (
+          {socials?.map((social, index) => (
             <motion.a
               key={index}
               href={social.href}
@@ -124,6 +104,8 @@ export default function Footer() {
               whileHover="hover"
               className="w-14 h-14 bg-white/5 backdrop-blur-sm rounded-2xl flex items-center justify-center text-white border border-white/10 hover:bg-white/10 hover:border-cyan-400/50 transition-all"
               aria-label={social.label}
+              target="_blank"
+              rel="noreferrer noopener"
             >
               <social.icon size={24} />
             </motion.a>

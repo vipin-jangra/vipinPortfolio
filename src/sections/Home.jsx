@@ -4,25 +4,9 @@ import ParticlesBackground from "../components/ParticlesBackground";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import avatar from "../assets/avator-purple.png";
+import { socials } from "../components/Constants";
 
-const socials = [
-  {
-    name: "Github",
-    href: "https://github.com/vipin-2003",
-    icon: FaGithub,
-  },
-  {
-    name: "Linkedin",
-    href: "https://www.linkedin.com/in/vipin-2003/",
-    icon: FaLinkedin,
-  },
 
-  {
-    name: "Gmail",
-    href: "mailto:vipin2003@gmail.com",
-    icon: FaEnvelope,
-  },
-];
 
 const glowVariants = {
   initial: { scale: 1, y: 0, filter: "drop-shadow(0 0 0px rgba(0,0,0,0))" },
@@ -166,7 +150,7 @@ export default function Home() {
             </motion.div>
 
             <div className="mt-10 flex items-center justify-center lg:justify-start gap-6">
-              {socials.map((social) => (
+              {socials?.map((social) => (
                 <motion.a
                   key={social.name}
                   aria-label={social.name}

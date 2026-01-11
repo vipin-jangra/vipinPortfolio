@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoSparklesOutline } from "react-icons/io5";
+import { socials } from "../components/Constants";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -134,24 +135,7 @@ export default function Contact() {
           variants={itemVariants}
           className="flex justify-center gap-6 mb-12"
         >
-          {[
-            {
-              name: "Github",
-              href: "https://github.com/vipin-2003",
-              icon: FaGithub,
-            },
-            {
-              name: "Linkedin",
-              href: "https://www.linkedin.com/in/vipin-2003/",
-              icon: FaLinkedin,
-            },
-
-            {
-              name: "Gmail",
-              href: "mailto:vipin2003@gmail.com",
-              icon: FaEnvelope,
-            },
-          ].map((social, index) => (
+          {socials?.map((social, index) => (
             <motion.a
               key={index}
               href={social.href}
@@ -159,6 +143,8 @@ export default function Contact() {
               whileHover="hover"
               className="backdrop-blur-sm  flex items-center justify-center text-white hover:text-pink-500 transition-all"
               aria-label={social.label}
+              target="_blank"
+              rel="noreferrer noopener"
             >
               <social.icon className="w-6 h-6" />
             </motion.a>
